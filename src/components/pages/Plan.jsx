@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 
 const Plan = () => {
@@ -9,4 +9,4 @@ const Plan = () => {
     )
 }
 
-export default Main
+export default Plan

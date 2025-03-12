@@ -11,6 +11,7 @@ const css = {
         width: 100%;
         height: 80px;
         background-color: #202634;
+        padding: 0 30px;
     `,
     FooterContainer: styled.footer`
         display: flex;

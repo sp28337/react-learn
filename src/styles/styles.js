@@ -22,6 +22,12 @@ const css = {
         height: 80px;
         background-color: #E5E5E5;
     `,
+    HeaderCSS: {
+        Logo: styled.div`
+            font-size: 30px;
+            color: #B0F347;
+        `
+    }
 }
 
 export default css

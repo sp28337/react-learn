@@ -2,12 +2,14 @@ import React from 'react'
 import css from "../../../styles/styles"
 
 
-const { HeaderContainer } = css
+const { HeaderContainer, HeaderCSS } = css
 
 const Head = () => {
     return (
         <React.Fragment>
-            <HeaderContainer></HeaderContainer>
+            <HeaderContainer>
+                <HeaderCSS.Logo>FINMANAGER</HeaderCSS.Logo>
+            </HeaderContainer>
         </React.Fragment>        
     )
 }

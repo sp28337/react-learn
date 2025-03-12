@@ -26,6 +26,13 @@ const css = {
         Logo: styled.div`
             font-size: 30px;
             color: #B0F347;
+        `,
+        MenuContainer: styled.div`
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            position: relative;
         `
     }
 }

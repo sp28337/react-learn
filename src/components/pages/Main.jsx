@@ -11,9 +11,9 @@ const Main = () => {
         <React.Fragment>
             <Head></Head>
             <FormContainer>
-                <InputComponent></InputComponent>
-                <InputComponent></InputComponent>
-                <InputComponent></InputComponent>
+                <InputComponent placeholder={"Transaction sum"}/>
+                <InputComponent placeholder={"Transaction type"}/>
+                <InputComponent placeholder={"Enter comment"}/>
             </FormContainer>
             <Foot></Foot>
         </React.Fragment>        

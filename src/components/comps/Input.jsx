@@ -6,7 +6,7 @@ const { Input } = css
 
 const InputComponent = (props) => {
     
-    const { placeholder, maxLength } = props
+    const { placeholder, maxLength, action } = props
 
     return (
         <React.Fragment>
@@ -14,6 +14,10 @@ const InputComponent = (props) => {
                 type="text" 
                 placeholder={placeholder}
                 maxLength={maxLength}
+                onChange={event => {
+                    const newValue = event.target.value
+                    action(newValue)
+                }}
             />
 
         </React.Fragment>

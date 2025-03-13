@@ -41,7 +41,7 @@ const css = {
         border: none;
         text-align: center;
         cursor: pointer;
-        background-color: rgb(229, 229, 229);
+        background-color: ${props => props.backgroundColor};
     `
 }
 

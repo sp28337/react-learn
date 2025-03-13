@@ -14,7 +14,7 @@ const Main = () => {
                 <InputComponent placeholder={"Transaction sum"}/>
                 <InputComponent placeholder={"Transaction type"}/>
                 <InputComponent placeholder={"Enter comment"}/>
-                <Button>Save transaction</Button>
+                <Button backgroundColor={"#B0F347"}>Save transaction</Button>
             </FormContainer>
             <Foot></Foot>
         </React.Fragment>        

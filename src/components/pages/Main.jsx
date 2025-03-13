@@ -14,17 +14,23 @@ const Main = () => {
 
     const validation = () => {
         if (value.length > 2 && type) {
+
             console.log("Successful validation")
+            setValue("")
+            setType("")
+            setComment("")
+
         } else console.log("Failed validation")
     }
+
 
     return (
         <React.Fragment>
             <Head></Head>
             <FormContainer>
-                <InputComponent action={setValue} placeholder={"Transaction type"} maxLength={"100"}/>
-                <InputComponent action={setType} placeholder={"Transaction sum"} maxLength={"100"}/>
-                <InputComponent action={setComment} placeholder={"Enter comment"} maxLength={"100"}/>
+                <InputComponent inputValue={value} action={setValue} placeholder={"Transaction type"} maxLength={"100"}/>
+                <InputComponent inputValue={type} action={setType} placeholder={"Transaction sum"} maxLength={"100"}/>
+                <InputComponent inputValue={comment} action={setComment} placeholder={"Enter comment"} maxLength={"100"}/>
                 <Button 
                     backgroundColor={
                         value.length < 3 ? "#E5E5E5" : 

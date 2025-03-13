@@ -6,11 +6,12 @@ const { Input } = css
 
 const InputComponent = (props) => {
     
-    const { placeholder, maxLength, action } = props
+    const { placeholder, maxLength, action, inputValue} = props
 
     return (
         <React.Fragment>
-            <Input 
+            <Input
+                value={inputValue} 
                 type="text" 
                 placeholder={placeholder}
                 maxLength={maxLength}

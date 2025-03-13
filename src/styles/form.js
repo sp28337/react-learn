@@ -31,6 +31,18 @@ const css = {
             margin: 0px;
         }
     `,
+    Button: styled.button`
+        display: block;
+        position: relative;
+        width: 220px;
+        height: 44px;
+        line-height: 42px;
+        border-radius: 4px;
+        border: none;
+        text-align: center;
+        cursor: pointer;
+        background-color: rgb(229, 229, 229);
+    `
 }
 
 export default css

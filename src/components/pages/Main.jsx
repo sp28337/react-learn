@@ -4,7 +4,7 @@ import Foot from "../views/global/Foot"
 import InputComponent from "../comps/Input"
 import css from "../../styles/form"
 
-const { FormContainer } = css
+const { FormContainer, Button } = css
 
 const Main = () => {
     return (
@@ -14,6 +14,7 @@ const Main = () => {
                 <InputComponent placeholder={"Transaction sum"}/>
                 <InputComponent placeholder={"Transaction type"}/>
                 <InputComponent placeholder={"Enter comment"}/>
+                <Button>Save transaction</Button>
             </FormContainer>
             <Foot></Foot>
         </React.Fragment>        

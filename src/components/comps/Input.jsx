@@ -3,19 +3,20 @@ import css from "../../styles/form"
 
 const { Input } = css
 
-const InputComponent = (props) => {
 
-    const { placeholder } = props
+const InputComponent = (props) => {
+    
+    const { placeholder, maxLength } = props
 
     return (
         <React.Fragment>
             <Input 
                 type="text" 
                 placeholder={placeholder}
-                maxLength={"100"}
+                maxLength={maxLength}
             />
 
-        </React.Fragment>        
+        </React.Fragment>
     )
 }
 

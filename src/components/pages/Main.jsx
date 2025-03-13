@@ -11,9 +11,9 @@ const Main = () => {
         <React.Fragment>
             <Head></Head>
             <FormContainer>
-                <InputComponent placeholder={"Transaction sum"}/>
-                <InputComponent placeholder={"Transaction type"}/>
-                <InputComponent placeholder={"Enter comment"}/>
+                <InputComponent placeholder={"Transaction type"} maxLength={"20"}/>
+                <InputComponent placeholder={"Transaction sum"} maxLength={"10"}/>
+                <InputComponent placeholder={"Enter comment"} maxLength={"5"}/>
                 <Button backgroundColor={"#B0F347"}>Save transaction</Button>
             </FormContainer>
             <Foot></Foot>

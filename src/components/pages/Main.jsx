@@ -3,6 +3,7 @@ import Head from "../views/global/Head"
 import Foot from "../views/global/Foot"
 import InputComponent from "../comps/Input"
 import css from "../../styles/form"
+import DataList from "../views/local/DataList"
 
 const { FormContainer, Button } = css
 
@@ -36,6 +37,7 @@ const Main = () => {
                         value.length < 3 ? "#E5E5E5" : 
                         type ? "#B0F347" : "#E5E5E5"} onClick={validation}>Save transaction</Button>
             </FormContainer>
+            <DataList/>
             <Foot></Foot>
         </React.Fragment>        
     )

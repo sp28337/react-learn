@@ -16,7 +16,13 @@ const Main = (props) => {
         if (value.length > 2 && type) {
             console.log("Successful validation")
 
-            const dataLine = `${value}::${type}::${comment}`
+            // const dataLine = `${value}::${type}::${comment}`
+
+            const dataLine = {
+                value: value,
+                type: type,
+                comment: comment
+            }
 
             action(
                 prev => [...prev, dataLine]

@@ -23,15 +23,15 @@ const DataList = (props) => {
         }, 0)
     
     const reduceDataType1 = () => setDataType("profit")
-    const reduceDataType2 = () => setDataType("divergence")
+    const reduceDataType2 = () => setDataType("expence")
     const reduceDataType3 = () => setDataType("all")
 
     return (
         <React.Fragment>
 
             <ButtonLine>
-                <ButtonItem onClick={reduceDataType1}>Profit</ButtonItem>
-                <ButtonItem onClick={reduceDataType2}>Divergence</ButtonItem>
+                <ButtonItem onClick={reduceDataType1}>Profits</ButtonItem>
+                <ButtonItem onClick={reduceDataType2}>Expences</ButtonItem>
                 <ButtonItem onClick={reduceDataType3}>All</ButtonItem>
             </ButtonLine>
 

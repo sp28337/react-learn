@@ -9,12 +9,24 @@ const DataList = (props) => {
     const [ dataType, setDataType ] = useState("profit")
     const filterData = data.filter(item => item.split("::")[1] === dataType)
 
+    const reduceDataType1 = () => {
+        setDataType("profit")
+    }
+
+    const reduceDataType2 = () => {
+        setDataType("divergence")
+    }
+
+    const reduceDataType3 = () => {
+        setDataType("all")
+    }
+
     return (
         <React.Fragment>
             <ButtonLine>
-                <ButtonItem>Profit</ButtonItem>
-                <ButtonItem>Divergence</ButtonItem>
-                <ButtonItem>All</ButtonItem>
+                <ButtonItem onClick={reduceDataType1}>Profit</ButtonItem>
+                <ButtonItem onClick={reduceDataType2}>Divergence</ButtonItem>
+                <ButtonItem onClick={reduceDataType3}>All</ButtonItem>
             </ButtonLine>
             <DataContainer>
                 { filterData.map((item, index) => {

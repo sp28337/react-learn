@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import css from "../../../styles/dataList"
 
-const { DataContainer, ContentLine, ContentCell } = css
+const { DataContainer, ContentLine, ContentCell, ButtonLine, ButtonItem } = css
 
 const DataList = (props) => {
 
@@ -11,6 +11,11 @@ const DataList = (props) => {
 
     return (
         <React.Fragment>
+            <ButtonLine>
+                <ButtonItem>Profit</ButtonItem>
+                <ButtonItem>Divergence</ButtonItem>
+                <ButtonItem>All</ButtonItem>
+            </ButtonLine>
             <DataContainer>
                 { filterData.map((item, index) => {
                     return (
@@ -21,7 +26,6 @@ const DataList = (props) => {
                         </ContentLine>
                     )
                 })}
-
             </DataContainer>
         </React.Fragment>        
     )

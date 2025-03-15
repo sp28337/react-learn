@@ -14,7 +14,7 @@ const Main = (props) => {
 
     const { action } = props
     const [ value, setValue ] = useState("")
-    const [ type, setType ] = useState("")
+    const [ type, setType ] = useState("profit")
     const [ comment, setComment ] = useState("")
 
     const validation = () => {
@@ -31,7 +31,7 @@ const Main = (props) => {
                 prev => [...prev, dataLine]
             )
             setValue("")
-            setType("")
+            setType("profit")
             setComment("")
 
         } else console.log("Failed validation")
@@ -39,6 +39,10 @@ const Main = (props) => {
 
     const handleChange = (event) => {
         setType(event.target.value);
+      };
+
+    const handleChangeComment = (event) => {
+        setComment(event.target.value);
       };
 
     return (
@@ -60,8 +64,26 @@ const Main = (props) => {
                         <FormControlLabel value="expence" control={<Radio />} label="expence" />
                     </RadioGroup>
                 </FormControl>
-                {/* <InputComponent inputValue={type} action={setType} placeholder={"Transaction type"} maxLength={"100"}/> */}
-                <InputComponent inputValue={comment} action={setComment} placeholder={"Enter comment"} maxLength={"100"}/>
+                {type === "expence" && <FormControl style={{marginRight: "auto"}}>
+                    <FormLabel id="demo-controlled-radio-buttons-group">Choose expences type:</FormLabel>
+                    <RadioGroup
+                        aria-labelledby="demo-controlled-radio-buttons-group"
+                        name="controlled-radio-buttons-group"
+                        value={comment}
+                        onChange={handleChangeComment}
+                        style={{
+                            flexDirection: "row"
+                        }}
+                    >
+                        <FormControlLabel value="grocery shopping" control={<Radio />} label="grocery shopping" />
+                        <FormControlLabel value="paying bills" control={<Radio />} label="paying bills" />
+                        <FormControlLabel value="shopping for clothes" control={<Radio />} label="shopping for clothes" />
+                        <FormControlLabel value="car expences" control={<Radio />} label="car expences" />
+                        <FormControlLabel value="entertainment" control={<Radio />} label="entertainment" />
+                        <FormControlLabel value="travels" control={<Radio />} label="travels" />
+                    </RadioGroup>
+                </FormControl>}
+                {type === "profit" && <InputComponent inputValue={comment} action={setComment} placeholder={"Enter comment"} maxLength={"100"}/>}
                 <Button 
                     backgroundColor={
                         value.length < 3 ? "#E5E5E5" : 

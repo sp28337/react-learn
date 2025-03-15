@@ -29,15 +29,29 @@ const DataList = (props) => {
                 <ButtonItem onClick={reduceDataType3}>All</ButtonItem>
             </ButtonLine>
             <DataContainer>
-                { filterData.map((item, index) => {
-                    return (
-                        <ContentLine key={index}>
-                            <ContentCell width={"15%"}>{item.split("::")[0]}</ContentCell>
-                            <ContentCell width={"15%"}>{item.split("::")[1]}</ContentCell>
-                            <ContentCell width={"70%"}>{item.split("::")[2]}</ContentCell>
-                        </ContentLine>
-                    )
-                })}
+                { filterData.length > 0 && <React.Fragment>
+                    { filterData.map((item, index) => {
+                        return (
+                            <ContentLine key={index}>
+                                <ContentCell width={"15%"}>{item.split("::")[0]}</ContentCell>
+                                <ContentCell width={"15%"}>{item.split("::")[1]}</ContentCell>
+                                <ContentCell width={"70%"}>{item.split("::")[2]}</ContentCell>
+                            </ContentLine>
+                        )
+                    })}
+                </React.Fragment> }
+                { filterData.length === 0 && <React.Fragment>
+                    { data.map((item, index) => {
+                        return (
+                            <ContentLine key={index}>
+                                <ContentCell width={"15%"}>{item.split("::")[0]}</ContentCell>
+                                <ContentCell width={"15%"}>{item.split("::")[1]}</ContentCell>
+                                <ContentCell width={"70%"}>{item.split("::")[2]}</ContentCell>
+                            </ContentLine>
+                        )
+                    })}
+                </React.Fragment> }
+
             </DataContainer>
         </React.Fragment>        
     )

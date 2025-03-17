@@ -47,9 +47,9 @@ const Main = (props) => {
 
     return (
         <React.Fragment>
-            <FormContainer>
+            <FormContainer style={{alignItems: "flex-start"}}>
                 <InputComponent inputValue={value} action={setValue} placeholder={"Transaction sum"} maxLength={"100"}/>
-                <FormControl style={{marginRight: "auto"}}>
+                <FormControl style={{marginRight: "auto", marginTop: "9px", marginBottom: "12px"}}>
                     <FormLabel id="demo-controlled-radio-buttons-group">Choose transaction type:</FormLabel>
                     <RadioGroup
                         aria-labelledby="demo-controlled-radio-buttons-group"
@@ -57,14 +57,16 @@ const Main = (props) => {
                         value={type}
                         onChange={handleChange}
                         style={{
-                            flexDirection: "row"
+                            flexDirection: "row",
+                            marginTop: "5px",
+                            marginLeft: "6px"
                         }}
                     >
                         <FormControlLabel value="profit" control={<Radio />} label="profit" />
                         <FormControlLabel value="expence" control={<Radio />} label="expence" />
                     </RadioGroup>
                 </FormControl>
-                {type === "expence" && <FormControl style={{marginRight: "auto"}}>
+                {type === "expence" && <FormControl style={{marginRight: "auto", marginTop: "0px", marginBottom: "14px"}}>
                     <FormLabel id="demo-controlled-radio-buttons-group">Choose expences type:</FormLabel>
                     <RadioGroup
                         aria-labelledby="demo-controlled-radio-buttons-group"
@@ -72,7 +74,9 @@ const Main = (props) => {
                         value={comment}
                         onChange={handleChangeComment}
                         style={{
-                            flexDirection: "row"
+                            flexDirection: "row",
+                            marginTop: "5px",
+                            marginLeft: "6px"
                         }}
                     >
                         <FormControlLabel value="grocery shopping" control={<Radio />} label="grocery shopping" />

@@ -36,9 +36,9 @@ const DataList = (props) => {
         <React.Fragment>
 
             <ButtonLine>
-                <ButtonItem onClick={reduceDataType1}>Profits</ButtonItem>
-                <ButtonItem onClick={reduceDataType2}>Expences</ButtonItem>
-                <ButtonItem onClick={reduceDataType3}>All</ButtonItem>
+                <ButtonItem style={{fontWeight: dataType === "profit" ? "bold": ""}} onClick={reduceDataType1}>Profits</ButtonItem>
+                <ButtonItem style={{fontWeight: dataType === "expence" ? "bold": ""}} onClick={reduceDataType2}>Expences</ButtonItem>
+                <ButtonItem style={{fontWeight: dataType === "all" ? "bold": ""}} onClick={reduceDataType3}>All</ButtonItem>
             </ButtonLine>
 
             <DataContainer>

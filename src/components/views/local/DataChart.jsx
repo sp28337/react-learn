@@ -168,8 +168,8 @@ const DataChart = (props) => {
     
     return (
         <React.Fragment>
-            <DataContainer style={{height: "500px", width: "800px"}}>
-                { show && <MyResponsivePie data={[{
+            { show && <DataContainer style={{height: "500px", width: "800px"}}>
+                <MyResponsivePie data={[{
                     "id": "grocery shopping",
                     "label": "grocery shopping",
                     "value": r01,
@@ -204,9 +204,9 @@ const DataChart = (props) => {
                     "label": "travels",
                     "value": r06,
                     "color": "hsl(191, 70%, 50%)"
-                    }]}/>
-                }
+                    }].filter(item => item.value > 0)}/>
             </DataContainer>
+            }
         </React.Fragment>
     )
 }

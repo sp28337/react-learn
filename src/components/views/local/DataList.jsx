@@ -5,25 +5,31 @@ const { DataContainer, ContentLine, ContentCell, ButtonLine, ButtonItem, Hr } = 
 
 const DataList = (props) => {
 
-    const { data = [] } = props
+    const { data = [], setShow } = props
     const [ dataType, setDataType ] = useState("profit")
     const filterData = data.filter(item => item.type === dataType)
     const filterDataSum = data.filter(item => item.type === dataType)
         .reduce((summ, item) => {
-            return summ + +item.value
+            return summ + +item.value.split(" ").join("")
         }, 0)
 
     const filterDataDelta = data
         .reduce((summ, item) => {
             if (item.type === "profit") {
-                return summ + +item.value
+                return summ + +item.value.split(" ").join("")
             } else {
-                return summ - +item.value
+                return summ - +item.value.split(" ").join("")
             }
         }, 0)
     
-    const reduceDataType1 = () => setDataType("profit")
-    const reduceDataType2 = () => setDataType("expence")
+    const reduceDataType1 = () => { 
+        setDataType("profit")
+        setShow(false)
+    }
+    const reduceDataType2 = () => {
+        setDataType("expence")
+        setShow(true)
+    }
     const reduceDataType3 = () => setDataType("all")
 
     return (

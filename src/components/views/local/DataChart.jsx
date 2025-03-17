@@ -164,7 +164,7 @@ const DataChart = (props) => {
                 setR06(prev => prev + +(filterData[i].value.split(" ").join("")))
             }
         }
-    }, [])
+    }, [filterData])
     
     return (
         <React.Fragment>

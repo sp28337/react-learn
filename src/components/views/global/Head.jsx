@@ -1,5 +1,6 @@
 import React from 'react'
 import css from "../../../styles/styles"
+import { Link } from 'react-router-dom'
 
 
 const { HeaderContainer, HeaderCSS } = css
@@ -14,18 +15,16 @@ const buttonCSS  = {
 }
 
 
-const Head = (props) => {
-
-    const { action } = props
+const Head = () => {
 
     return (
         <React.Fragment>
             <HeaderContainer>
                 <HeaderCSS.Logo>FINMANAGER</HeaderCSS.Logo>
                 <HeaderCSS.MenuContainer>
-                    <button onClick={ () => action("main")} style={buttonCSS}>Homepage</button>
-                    <button onClick={ () => action("stat")} style={buttonCSS}>Statistic</button>
-                    <button style={buttonCSS}>Planning</button>
+                    <button style={buttonCSS}><Link style={{color: "inherit", textDecoration: "none"}} to="/main">Homepage</Link></button>
+                    <button style={buttonCSS}><Link style={{color: "inherit", textDecoration: "none"}} to="/stat">Statistic</Link></button>
+                    <button style={buttonCSS}><Link style={{color: "inherit", textDecoration: "none"}} to="/plan">Planning</Link></button>
                 </HeaderCSS.MenuContainer>
             </HeaderContainer>
         </React.Fragment>        

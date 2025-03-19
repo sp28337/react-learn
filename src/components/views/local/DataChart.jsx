@@ -136,7 +136,7 @@ const MyResponsivePie = ({ data /* see data tab */ }) => (
 
 const DataChart = (props) => {
     
-    const { data = [], show } = props
+    const { data = [] } = props
 
     const filterData = useMemo(() => data.filter(item => item.type === "expence"), [data])
 
@@ -173,7 +173,7 @@ const DataChart = (props) => {
     
     return (
         <React.Fragment>
-            { show && <DataContainer style={{height: "500px", width: "800px"}}>
+            <DataContainer style={{height: "500px", width: "800px"}}>
                 <MyResponsivePie data={[{
                     "id": "grocery shopping",
                     "label": "grocery shopping",
@@ -211,7 +211,6 @@ const DataChart = (props) => {
                     "color": "hsl(191, 70%, 50%)"
                     }].filter(item => item.value > 0)}/>
             </DataContainer>
-            }
         </React.Fragment>
     )
 }

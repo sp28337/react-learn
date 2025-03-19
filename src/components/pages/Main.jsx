@@ -91,7 +91,8 @@ const Main = (props) => {
                 <Button 
                     backgroundColor={
                         value.length < 3 ? "#E5E5E5" : 
-                        type ? "#B0F347" : "#E5E5E5"} onClick={validation}>Save transaction</Button>
+                        type ? "#B0F347" : "#E5E5E5"} onClick={validation}>Save transaction
+                </Button>
             </FormContainer>
             <Foot></Foot>
         </React.Fragment>        

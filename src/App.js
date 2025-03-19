@@ -4,9 +4,14 @@ import Main from "./components/pages/Main"
 import Stat from "./components/pages/Stat"
 import Plan from "./components/pages/Plan"
 import Head from './components/views/global/Head'
+import Error from './components/pages/Error'
 
 const router = createBrowserRouter([
-  { path: "*", element: <Root/> },
+  { 
+    path: "*", 
+    element: <Root/>, 
+    errorElement: <Error/> 
+  },
 ])
 
 function Root() {
@@ -18,8 +23,9 @@ function Root() {
       <Head></Head>
       <Routes>
         <Route path="/main" element={<Main action={setData}></Main>}/>
-        <Route path="/stat" element={<Stat statData={data}></Stat>}/>
+        <Route path="/stat/:viewType" element={<Stat statData={data}></Stat>}/>
         <Route path="/plan" element={<Plan/>}/>
+        <Route path={"*"} element={<Main action={setData}></Main>}/>
       </Routes>
     </React.Fragment>
   )

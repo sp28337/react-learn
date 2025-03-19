@@ -1,18 +1,19 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useParams } from 'react-router-dom'
 import Foot from '../views/global/Foot'
 import DataList from '../views/local/DataList'
 import DataChart from '../views/local/DataChart'
 
+
 const Stat = (props) => {
     
     const { statData = [] } = props
-    const [ isShowChart, setIsShowChart] = useState(true)
-    
-
+    const { viewType } = useParams()
+        
     return (
         <React.Fragment>
-            <DataList setShow={setIsShowChart} data={statData}/>
-            <DataChart show={isShowChart} data={statData}/>
+            <DataList viewType={viewType} data={statData}/>
+            {viewType === "expence" && <DataChart viewType={viewType} data={statData}/>}
             <Foot></Foot>
         </React.Fragment>        
     )

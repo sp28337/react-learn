@@ -30,7 +30,7 @@ const Main = (props) => {
                 comment: comment,
             }
 
-            action(prev => [...prev, dataLine])
+            action(dataLine)
 
             dispatch(changeValue(""))
             dispatch(changeType("profit"))

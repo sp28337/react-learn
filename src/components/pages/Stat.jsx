@@ -4,7 +4,6 @@ import Foot from '../views/global/Foot'
 import DataList from '../views/local/DataList'
 import DataChart from '../views/local/DataChart'
 
-
 const Stat = (props) => {
     
     const { statData = [] } = props

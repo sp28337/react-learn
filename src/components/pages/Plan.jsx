@@ -14,7 +14,13 @@ const Plan = () => {
 
     return (
         <React.Fragment>
-            <span>Counter: {count}<button onClick={handleClick}>Button</button></span>
+            <span>Counter: {count}
+                <button onClick={handleClick}>
+                    
+                    Button
+                    
+                </button>
+            </span>
             <Foot/>
         </React.Fragment>        
     )

@@ -2,7 +2,6 @@ import React, { useEffect, useMemo, useState } from "react"
 import css from "../../../styles/dataList"
 import { ResponsivePie } from '@nivo/pie'
 
-
 const { DataContainer } = css
 const MyResponsivePie = ({ data /* see data tab */ }) => (
     <ResponsivePie
@@ -146,7 +145,7 @@ const DataChart = (props) => {
         clothes: 0,
         entertainment: 0,
         travels: 0,
-      });
+      })
 
     useEffect(() => {
         const newTotals = {
@@ -156,10 +155,10 @@ const DataChart = (props) => {
             entertainment: 0,
             travels: 0,
             carExpences: 0
-        };
+        }
 
         filterData.forEach(item => {
-            const value = parseFloat(item.value.split(" ").join(""));
+            const value = parseFloat(item.value.split(" ").join(""))
             if (item.comment === "grocery shopping") newTotals.grocery += value;
             else if (item.comment === "paying bills") newTotals.bills += value;
             else if (item.comment === "shopping for clothes") newTotals.clothes += value;
@@ -168,8 +167,8 @@ const DataChart = (props) => {
             else if (item.comment === "car expences") newTotals.carExpences += value;
             });
 
-        setTotals(newTotals);
-    }, [filterData]);
+        setTotals(newTotals)
+    }, [filterData])
     
     return (
         <React.Fragment>

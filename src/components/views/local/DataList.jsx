@@ -35,32 +35,53 @@ const DataList = (props) => {
 
     function showProfit() {
 
-        const condition = 
-            filterDataSum > 0 ? `+ ${filterDataSum}` : `${filterDataSum}`
+        const condition = filterDataSum > 0    ? 
+                          `+ ${filterDataSum}` : 
+                          `${filterDataSum}`
 
         return (
             <React.Fragment>
-                
-                { filterData.map((item, index) => {
-                    return (
-                        <ContentLine key={index} backgroundColor="rgb(229, 229, 229)">
-                            <ContentCell width={"15%"}>{item.type === "profit" && `+ ${item.value}`}</ContentCell>
-                            <ContentCell width={"15%"}>{item.type}</ContentCell>
-                            <ContentCell width={"70%"}>{item.comment}</ContentCell>
-                        </ContentLine>
-                    )
-                })}
+            
+                { 
+                    filterData.map((item, index) => {
+                        return (
+                            <ContentLine key={index} backgroundColor="rgb(229, 229, 229)">
+                                <ContentCell width={"15%"}>{item.type === "profit" && `+ ${item.value}`}
+
+                                </ContentCell>
+                                <ContentCell width={"15%"}>{item.type}
+
+                                </ContentCell>
+                                <ContentCell width={"70%"}>{item.comment}
+
+                                </ContentCell>
+                            </ContentLine>
+                        )
+                    })
+                }
 
                 <Hr/>
 
                 <ContentLine>
-                    <ContentCell width={"15%"} 
-                                 backgroundColor={filterDataSum === 0 ? "rgb(229, 229, 229)" : "lightgreen"}
+                    <ContentCell width={"15%"} backgroundColor={
+                                                                    filterDataSum === 0    ? 
+                                                                    "rgb(229, 229, 229)" : 
+                                                                    "lightgreen"
+                                                                }
                     >
                         {condition}
+
                     </ContentCell>
-                    <ContentCell width={"15%"}>--</ContentCell>
-                    <ContentCell width={"70%"}>--</ContentCell>
+                    <ContentCell width={"15%"}>
+                        
+                        --
+
+                    </ContentCell>
+                    <ContentCell width={"70%"}>
+                        
+                        --
+                        
+                    </ContentCell>
                 </ContentLine>
 
             </React.Fragment>
@@ -69,8 +90,9 @@ const DataList = (props) => {
 
     function showExpences() {
         
-        const condition = 
-            filterDataSum > 0 ? `- ${filterDataSum}` : `${filterDataSum}`
+        const condition = filterDataSum > 0    ? 
+                          `- ${filterDataSum}` : 
+                          `${filterDataSum}`
 
         return (
             <React.Fragment>
@@ -78,9 +100,15 @@ const DataList = (props) => {
                 { filterData.map((item, index) => {
                     return (
                         <ContentLine key={index} backgroundColor="rgb(229, 229, 229)">
-                            <ContentCell width={"15%"}>{item.type === "expence" && `- ${item.value}`}</ContentCell>
-                            <ContentCell width={"15%"}>{item.type}</ContentCell>
-                            <ContentCell width={"70%"}>{item.comment}</ContentCell>
+                            <ContentCell width={"15%"}>{item.type === "expence" && `- ${item.value}`}
+
+                            </ContentCell>
+                            <ContentCell width={"15%"}>{item.type}
+
+                            </ContentCell>
+                            <ContentCell width={"70%"}>{item.comment}
+
+                            </ContentCell>
                         </ContentLine>
                     )
                 })}
@@ -88,13 +116,25 @@ const DataList = (props) => {
                 <Hr/>
 
                 <ContentLine>
-                    <ContentCell width={"15%"} 
-                                 backgroundColor={filterDataSum === 0 ? "rgb(229, 229, 229)" : "lightcoral"}
+                    <ContentCell width={"15%"} backgroundColor={
+                                                                    filterDataSum === 0    ? 
+                                                                    "rgb(229, 229, 229)" : 
+                                                                    "lightcoral"
+                                                                }
                     >
                         {condition}
+
                     </ContentCell>
-                    <ContentCell width={"15%"}>--</ContentCell>
-                    <ContentCell width={"70%"}>--</ContentCell>
+                    <ContentCell width={"15%"}>
+                        
+                        --
+                        
+                    </ContentCell>
+                    <ContentCell width={"70%"}>
+                        
+                        --
+                    
+                    </ContentCell>
                 </ContentLine>
 
             </React.Fragment>
@@ -106,13 +146,29 @@ const DataList = (props) => {
         return ( 
             <React.Fragment>
                 
-                { data.map((item, index) => {
-                    return (
-                        <ContentLine key={index} backgroundColor={item.type === "profit" ? "lightgreen" : "lightcoral"}>
-                            <ContentCell width={"15%"}>{item.type === "profit" ? `+ ${item.value}` : `- ${item.value}`}</ContentCell>
-                            <ContentCell width={"15%"}>{item.type}</ContentCell>
-                            <ContentCell width={"70%"}>{item.comment}</ContentCell>
-                        </ContentLine>
+                { 
+                    data.map((item, index) => {
+                        return (
+                            <ContentLine key={index} backgroundColor={
+                                                                        item.type === "profit" ? 
+                                                                        "lightgreen"           : 
+                                                                        "lightcoral"
+                                                                    }
+                            >
+                                <ContentCell width={"15%"}>
+                                    {
+                                        item.type === "profit" ? 
+                                        `+ ${item.value}`      : 
+                                        `- ${item.value}`
+                                    }
+                                </ContentCell>
+                                <ContentCell width={"15%"}>{item.type}
+
+                                </ContentCell>
+                                <ContentCell width={"70%"}>{item.comment}
+                                    
+                                </ContentCell>
+                            </ContentLine>
                         )
                     })
                 }
@@ -121,18 +177,30 @@ const DataList = (props) => {
 
                 <ContentLine>
                     <ContentCell 
-                        width={"15%"} 
-                        backgroundColor={
-                                filterDataDelta > 0 ?
-                                "lightgreen" : 
-                                filterDataDelta < 0 ?
-                                "lightcoral" : 
-                                "rgb(229, 229, 229)"}
+                        width={"15%"} backgroundColor={
+                                                        filterDataDelta > 0 ?
+                                                        "lightgreen"        : 
+                                                        filterDataDelta < 0 ?
+                                                        "lightcoral"        : 
+                                                        "rgb(229, 229, 229)"
+                                                    }
                     >
-                        {filterDataDelta > 0 ? `+ ${filterDataDelta}` : `${filterDataDelta}`}
+                        {
+                            filterDataDelta > 0    ? 
+                            `+ ${filterDataDelta}` : 
+                            `${filterDataDelta}`
+                        }
                     </ContentCell>
-                    <ContentCell width={"15%"}>--</ContentCell>
-                    <ContentCell width={"70%"}>--</ContentCell>
+                    <ContentCell width={"15%"}>
+
+                        --
+
+                    </ContentCell>
+                    <ContentCell width={"70%"}>
+
+                        --
+
+                    </ContentCell>
                 </ContentLine>
 
             </React.Fragment>
@@ -143,19 +211,38 @@ const DataList = (props) => {
         <React.Fragment>
 
             <ButtonLine>
-                <ButtonItem style={{fontWeight: viewType === "profit" ? "bold": ""}} onClick={reduceDataType1}>Profits</ButtonItem>
-                <ButtonItem style={{fontWeight: viewType === "expence" ? "bold": ""}} onClick={reduceDataType2}>Expences</ButtonItem>
-                <ButtonItem style={{fontWeight: viewType === "all" ? "bold": ""}} onClick={reduceDataType3}>All</ButtonItem>
+                <ButtonItem 
+                    style={{fontWeight: viewType === "profit" ? "bold": ""}} 
+                    onClick={reduceDataType1}
+                >
+                    Profits
+
+                </ButtonItem>
+                <ButtonItem 
+                    style={{fontWeight: viewType === "expence" ? "bold": ""}} 
+                    onClick={reduceDataType2}
+                >
+                    Expences
+
+                </ButtonItem>
+                <ButtonItem 
+                    style={{fontWeight: viewType === "all" ? "bold": ""}} 
+                    onClick={reduceDataType3}
+                >
+                    All
+                    
+                </ButtonItem>
             </ButtonLine>
 
             <DataContainer>
-                
                 { 
-                    viewType === "profit" & data.length > 0 ? showProfit() :
-                    viewType === "expence" & data.length > 0 ? showExpences() :
-                    filterData.length === 0 && showAll()
+                    viewType === "profit" & data.length > 0  ? 
+                    showProfit()                             :
+                    viewType === "expence" & data.length > 0 ? 
+                    showExpences()                           :
+                    filterData.length === 0                 && 
+                    showAll()
                 }
-
             </DataContainer>
 
         </React.Fragment>        

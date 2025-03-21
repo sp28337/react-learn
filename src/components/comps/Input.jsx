@@ -3,7 +3,6 @@ import css from "../../styles/form"
 
 const { Input } = css
 
-
 const InputComponent = (props) => {
     
     const { placeholder, maxLength, action, inputValue} = props
@@ -20,7 +19,6 @@ const InputComponent = (props) => {
                     action(newValue)
                 }}
             />
-
         </React.Fragment>
     )
 }

@@ -7,6 +7,7 @@ import Stat from "./components/pages/Stat"
 import Plan from "./components/pages/Plan"
 import Head from './components/views/global/Head'
 import Error from './components/pages/Error'
+import Url from "./components/views/global/Url"
 
 const router = createBrowserRouter([
   { 
@@ -27,7 +28,8 @@ function Root() {
 
   return (
     <React.Fragment>
-      <Head></Head>
+      <Head/>
+      <Url/>
       <Routes>
         <Route path="/main" element={<Main action={setData}></Main>}/>
         <Route path="/stat/:viewType" element={<Stat statData={data}></Stat>}/>

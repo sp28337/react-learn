@@ -35,7 +35,18 @@ const css = {
             justify-content: flex-start;
             position: relative;
         `
-    }
+    },
+    UrlContainer: styled.div`
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        position: relative;
+        width: 100%;
+        height: 30px;
+        background-color:rgb(255, 255, 255);
+        padding: 0 30px;
+    `
 }
 
 export default css

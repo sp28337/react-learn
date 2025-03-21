@@ -1,10 +1,13 @@
-import React, { useState } from "react"
+import React from "react"
 import { createBrowserRouter, Routes, Route, RouterProvider } from "react-router-dom"
+import { useSelector, useDispatch } from "react-redux"
+import { setData as setDataFromRedux} from "./redux/reducers/data"
 import Main from "./components/pages/Main"
 import Stat from "./components/pages/Stat"
 import Plan from "./components/pages/Plan"
 import Head from './components/views/global/Head'
 import Error from './components/pages/Error'
+import Url from "./components/views/global/Url"
 
 const router = createBrowserRouter([
   { 
@@ -16,11 +19,17 @@ const router = createBrowserRouter([
 
 function Root() {
 
-  const [ data, setData ] = useState([])
+  const data = useSelector(state => state.dataReducer.data)
+  const dispatch = useDispatch()
+
+  const setData = (param) => {
+    dispatch(setDataFromRedux(param))
+  }
 
   return (
     <React.Fragment>
-      <Head></Head>
+      <Head/>
+      <Url/>
       <Routes>
         <Route path="/main" element={<Main action={setData}></Main>}/>
         <Route path="/stat/:viewType" element={<Stat statData={data}></Stat>}/>

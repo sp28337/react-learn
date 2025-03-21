@@ -2,7 +2,6 @@ import React from 'react'
 import css from "../../../styles/styles"
 import { Link } from 'react-router-dom'
 
-
 const { HeaderContainer, HeaderCSS } = css
 
 const buttonCSS  = {
@@ -22,9 +21,46 @@ const Head = () => {
             <HeaderContainer>
                 <HeaderCSS.Logo>FINMANAGER</HeaderCSS.Logo>
                 <HeaderCSS.MenuContainer>
-                    <button style={buttonCSS}><Link style={{color: "inherit", textDecoration: "none"}} to="/main">Homepage</Link></button>
-                    <button style={buttonCSS}><Link style={{color: "inherit", textDecoration: "none"}} to="/stat/all">Statistic</Link></button>
-                    <button style={buttonCSS}><Link style={{color: "inherit", textDecoration: "none"}} to="/plan">Planning</Link></button>
+
+                    <button style={buttonCSS}>
+                        <Link 
+                            style={{
+                                color: "inherit", 
+                                textDecoration: "none"
+                            }} 
+                            to="/main"
+                        >
+                            Homepage
+
+                        </Link>
+                    </button>
+
+                    <button style={buttonCSS}>
+                        <Link 
+                            style={{
+                                color: "inherit", 
+                                textDecoration: "none"
+                            }} 
+                            to="/stat/all"
+                        >
+                            Statistic
+
+                        </Link>
+                    </button>
+
+                    <button style={buttonCSS}>
+                        <Link 
+                            style={{
+                                color: "inherit", 
+                                textDecoration: "none"
+                            }} 
+                            to="/plan"
+                        >
+                            Planning
+                        
+                        </Link>
+                    </button>
+
                 </HeaderCSS.MenuContainer>
             </HeaderContainer>
         </React.Fragment>        
